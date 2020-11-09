@@ -1,19 +1,18 @@
 pico-8 cartridge // http://www.pico-8.com
 version 29
 __lua__
+-- annonciation des variables
 function _init()
-print(oui)
-   
     p1={
         x=40,
         y=108,
-        sprite=1,
+        tete=1,
         flipx=false
     }
     p2={
         x=80,
         y=108,
-        sprite=2,
+        tete=2,
         flipx=false
     }
     b={
@@ -25,6 +24,27 @@ print(oui)
    	y=40,
    	}
 end
+
+
+-->8
+--draw, map et sprites
+
+function _draw()
+    cls()
+    map()
+ spr(p1.tete, p1.x, p1.y+8, 1, 1, p1.flipx)
+ spr(p1.jambe, p1.x, p1.y, 1, 1, p1.flipx)
+ spr(p2.tete, p2.x, p2.y+8, 1, 1, p2.flipx)
+ spr(p2.jambe, p2.x, p2.y, 1, 1, p2.flipx)
+ spr(b.sprite, b.x, b.y, 1, 1)
+ spr(10, 70, s.y-10, 1, 1)
+ spr(10, 80, s.y-10, 1, 1)
+ spr(10, 75, s.y, 1, 1)
+ spr(10, 50, s.y, 1, 1)
+end
+-->8
+-- mecas
+
 function _update60()
 	if s.y>60 then
 		s.y-=1
@@ -61,17 +81,7 @@ function _update60()
   p2.y-=6
  end
 end
-function _draw()
-    cls()
-    map()
- spr(p1.sprite, p1.x, p1.y, 1, 1, p1.flipx)
- spr(p2.sprite, p2.x, p2.y, 1, 1, p2.flipx)
- spr(b.sprite, b.x, b.y, 1, 1)
- spr(10, 70, s.y-10, 1, 1)
- spr(10, 80, s.y-10, 1, 1)
- spr(10, 75, s.y, 1, 1)
- spr(10, 50, s.y, 1, 1)
-end
+__gfx__
 __gfx__
 00000000000000000000000000777700cccccccc00000000ffffffffffffffffeeeeecccccceeeee000ff000000000ccffff5fffccccccccaa99884400000000
 00000000000000000000000007700770cccccccc05757570ffffffffffffffff77777ecccce77777f00ff00f6666660cffffffffccccccccaa99884400000000
