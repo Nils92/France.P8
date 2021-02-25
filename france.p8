@@ -18,10 +18,10 @@ function _init()
         jambe=2,
     }
     a={
-    				x=60,
-    				y=85,
-    				tete=55,
-    				jambe=56,
+    	x=60,
+    	y=85,
+    	tete=55,
+    	jambe=56,
     }
     b={
         x=60,
